@@ -1,22 +1,22 @@
 {
-  "x-namespace": "Elements",
-  "allOf": [
-    {
-      "$ref": "https://prod-api.hypar.io/schemas/Element"
-    }
-  ],
-  "required": [],
-  "properties": {
-    "Color": {
-      "description": "Layer Color",
-      "$ref": "https://hypar.io/Schemas/Geometry/Color.json"
-    }
-  },
-  "additionalProperties": false,
-  "description": "An element containing a collection of Elements that belong to one level.",
-  "$id": "ElementLayer",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "discriminator": "discriminator",
-  "type": "object",
-  "title": "ElementLayer"
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://prod-api.hypar.io/schemas/Element"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Color": {
+            "description": "Layer Color",
+            "$ref": "https://hypar.io/Schemas/Geometry/Color.json"
+        }
+    },
+    "additionalProperties": false,
+    "description": "A Layer.",
+    "$id": "ElementLayer",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "ElementLayer"
 }
