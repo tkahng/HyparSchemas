@@ -1,0 +1,31 @@
+{
+    "x-namespace": "Elements",
+    "required": [],
+    "properties": {
+        "Area": {
+            "type": "number",
+            "$hyparUnitType": "area"
+        },
+        "Profile": {
+            "description": "The boundary of this footprint",
+            "$ref": "https://prod-api.hypar.io/schemas/Profile"
+        },
+        "Height": {
+            "description": "The height of this footprint as a mass",
+            "type": "number",
+            "$hyparUnitType": "length"
+        }
+    },
+    "additionalProperties": false,
+    "description": "Represents a building footprint",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "$id": "Footprint",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "Footprint"
+}
