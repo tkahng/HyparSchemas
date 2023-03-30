@@ -6,9 +6,14 @@
             "type": "number",
             "$hyparUnitType": "area"
         },
-        "Profile": {
-            "description": "The boundary of this footprint",
-            "$ref": "https://prod-api.hypar.io/schemas/Profile"
+        "Profiles": {
+            "type": "array",
+            "description": "The boundary of this footprint using the roof",
+            "ite{ms": [
+                {
+                    "$ref": "https://schemas.hypar.io/Profile.json"
+                }
+            ]
         },
         "Height": {
             "description": "The height of this footprint as a mass",
