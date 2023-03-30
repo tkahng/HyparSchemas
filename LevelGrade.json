@@ -1,0 +1,11 @@
+{
+    "title": "LevelGrade",
+    "type": "string",
+    "enum": [
+        "Below",
+        "Above"
+    ],
+    "$id": "LevelGrade",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator"
+}
