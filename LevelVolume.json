@@ -1,0 +1,72 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Profile": {
+            "description": "The profile of the level Volume",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "Height": {
+            "description": "The floor-to-floor height of this level",
+            "type": "number",
+            "$hyparUnitType": "length"
+        },
+        "Area": {
+            "description": "The area of the level's profile.",
+            "type": "number",
+            "$hyparUnitType": "area"
+        },
+        "Building Name": {
+            "description": "The name of the building or mass this level belongs to (optional)",
+            "type": "string"
+        },
+        "Level": {
+            "$hyparRelationship": {
+                "type": "extends",
+                "discriminator": "Elements.Level"
+            },
+            "description": "The Level this volume was created from.",
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        },
+        "Mass": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.ConceptualMass"
+            },
+            "description": "The Conceptual Mass this volume was created from.",
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        },
+        "Plan View": {
+            "$hyparRelationship": {
+                "type": "has-view",
+                "discriminator": "Elements.ViewScope"
+            },
+            "description": "The default plan view for this level",
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "Describes the volume of occupiable space between a level and the next level above it.",
+    "$id": "LevelVolume",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "LevelVolume"
+}

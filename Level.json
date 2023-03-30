@@ -2,7 +2,7 @@
     "x-namespace": "Elements",
     "allOf": [
         {
-            "$ref": "https://prod-api.hypar.io/schemas/Element"
+            "$ref": "https://schemas.hypar.io/Element.json"
         }
     ],
     "required": [
@@ -14,16 +14,6 @@
             "type": "number",
             "$hyparUnitType": "length"
         },
-        "Grade": {
-            "type": "string",
-            "enum": [
-                "Below",
-                "Above"
-            ]
-        },
-        "Index": {
-            "type": "number"
-        },
         "Height": {
             "description": "The vertical distance from this level to the next. May be null for a top level, like a roof.",
             "type": [
@@ -32,20 +22,25 @@
             ],
             "$hyparUnitType": "length"
         },
-        "Building": {
-            "$hyparRelationship": {
-                "type": "child-of",
-                "discriminator": "Elements.Building"
-            },
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "uuid"
+        "Grade": {
+            "$ref": "#/$defs/Grade"
+        },
+        "Index": {
+            "type": "number"
         }
     },
     "additionalProperties": false,
     "description": "A horizontal datum representing a building level at a specific elevation.",
+    "$defs": {
+        "Grade": {
+            "title": "Grade",
+            "type": "string",
+            "enum": [
+                "Below",
+                "Above"
+            ]
+        }
+    },
     "$id": "Level",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "discriminator": "discriminator",

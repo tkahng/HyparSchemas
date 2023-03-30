@@ -1,0 +1,52 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/Element.json"
+        }
+    ],
+    "required": [
+        "Level",
+        "Layer"
+    ],
+    "properties": {
+        "Profiles": {
+            "description": "Profiles projected to the XY plane.",
+            "type": "array",
+            "items": {
+                "$ref": "https://schemas.hypar.io/Profile.json"
+            }
+        },
+        "BBox": {
+            "description": "The BBox of the Layer",
+            "$ref": "https://schemas.hypar.io/BBox3.json"
+        },
+        "Level": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Level"
+            },
+            "type": [
+                "string"
+            ],
+            "format": "uuid"
+        },
+        "Layer": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Layer"
+            },
+            "type": [
+                "string"
+            ],
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "Geometric Data By Layer.",
+    "$id": "LayerFootprint",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "LayerFootprint"
+}

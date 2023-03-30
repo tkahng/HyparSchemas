@@ -1,11 +1,12 @@
 {
     "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
     "required": [],
     "properties": {
-        "Area": {
-            "type": "number",
-            "$hyparUnitType": "area"
-        },
         "Profile": {
             "description": "The boundary of this footprint",
             "$ref": "https://schemas.hypar.io/Profile.json"
@@ -17,15 +18,10 @@
         }
     },
     "additionalProperties": false,
-    "description": "Represents a building footprint",
-    "allOf": [
-        {
-            "$ref": "https://schemas.hypar.io/GeometricElement.json"
-        }
-    ],
-    "$id": "Footprint",
+    "description": "Geometric Data By Layer.",
+    "$id": "BoundaryElement",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "discriminator": "discriminator",
     "type": "object",
-    "title": "Footprint"
+    "title": "BoundaryElement"
 }

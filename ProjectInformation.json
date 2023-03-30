@@ -1,0 +1,54 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/Element.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "SourceFileType": {
+            "$ref": "#/$defs/SourceFileType"
+        },
+        "Unit": {
+            "default": null,
+            "$ref": "#/$defs/LengthUnit"
+        },
+        "Footprint": {
+            "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/Footprint.json"
+        }
+    },
+    "additionalProperties": false,
+    "description": "A ProjectInformation.",
+    "$defs": {
+        "SourceFileType": {
+            "title": "SourceFileType",
+            "type": "string",
+            "enum": [
+                "Rhino"
+            ]
+        },
+        "LengthUnit": {
+            "title": "LengthUnit",
+            "type": [
+                "null",
+                "string"
+            ],
+            "enum": [
+                "Kilometer",
+                "Meter",
+                "Centimeter",
+                "Millimeter",
+                "Foot",
+                "Inch",
+                "None"
+            ],
+            "default": null
+        }
+    },
+    "$id": "ProjectInformation",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "ProjectInformation"
+}

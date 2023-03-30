@@ -1,0 +1,33 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/Element.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Elements": {
+            "description": "The list of elements.",
+            "type": "array",
+            "items": {
+                "$ref": "https://schemas.hypar.io/Element.json"
+            }
+        },
+        "Layer": {
+            "$hyparRelationship": {
+                "type": "extends",
+                "discriminator": "Elements.Layer"
+            },
+            "type": "string",
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "An element containing a collection of Elements that belong to one level.",
+    "$id": "LayerElements",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "LayerElements"
+}

@@ -2,14 +2,14 @@
     "x-namespace": "Elements",
     "allOf": [
         {
-            "$ref": "https://prod-api.hypar.io/schemas/Element"
+            "$ref": "https://schemas.hypar.io/Element.json"
         }
     ],
     "required": [],
     "properties": {
         "Color": {
             "description": "Layer Color",
-            "$ref": "https://hypar.io/Schemas/Geometry/Color.json"
+            "$ref": "https://schemas.hypar.io/Color.json"
         }
     },
     "additionalProperties": false,
