@@ -1,0 +1,43 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Profile": {
+            "description": "The boundary of the space",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "Area": {
+            "description": "The area of the boundary",
+            "type": "number",
+            "$hyparUnitType": "area"
+        },
+        "Height": {
+            "description": "The height of this space boundary",
+            "type": "number",
+            "$hyparUnitType": "length"
+        },
+        "ProgramType": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.ProgramType"
+            },
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "A profile with a program assigned to it, and optional internal cell geometry. ",
+    "$id": "BaseSpaceElement",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "BaseSpaceElement"
+}

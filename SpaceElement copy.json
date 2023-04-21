@@ -37,6 +37,14 @@
             "type": "number",
             "$hyparUnitType": "length"
         },
+        "Level": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Level"
+            },
+            "type": "string",
+            "format": "uuid"
+        },
         "Layer": {
             "$hyparRelationship": {
                 "type": "child-of",
@@ -48,9 +56,9 @@
     },
     "additionalProperties": false,
     "description": "A profile with a program assigned to it, and optional internal cell geometry. ",
-    "$id": "SpaceElementDefinition",
+    "$id": "SpaceElement",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "discriminator": "discriminator",
     "type": "object",
-    "title": "SpaceElementDefinition"
+    "title": "SpaceElement"
 }

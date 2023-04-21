@@ -1,0 +1,40 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/BaseSpaceElement.json"
+        },
+        {
+            "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/InstanceDefinition.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Roof": {
+            "description": "The roof of the space",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "BBox": {
+            "description": "The BBox of the Layer",
+            "$ref": "https://schemas.hypar.io/BBox3.json"
+        },
+        "Layer": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Layer"
+            },
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "A profile with a program assigned to it, and optional internal cell geometry. ",
+    "$id": "SpaceElementDefinition",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "SpaceElementDefinition"
+}
