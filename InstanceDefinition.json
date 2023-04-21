@@ -1,0 +1,25 @@
+{
+    "x-namespace": "Elements",
+    "required": [],
+    "properties": {
+        "InstanceCount": {
+            "description": "Number of Instances in the model.",
+            "type": [
+                "integer",
+                "null"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "description": "An instance definition info of an element in the model.",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "$id": "InstanceDefinition",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "InstanceDefinition"
+}

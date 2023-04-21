@@ -15,7 +15,11 @@
             "$ref": "#/$defs/LengthUnit"
         },
         "Footprint": {
-            "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/Footprint.json"
+            "description": "The list of elements.",
+            "type": "array",
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/Footprint.json"
+            }
         }
     },
     "additionalProperties": false,

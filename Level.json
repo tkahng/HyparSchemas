@@ -26,7 +26,7 @@
             "$ref": "#/$defs/Grade"
         },
         "Index": {
-            "type": "number"
+            "type": "integer"
         }
     },
     "additionalProperties": false,

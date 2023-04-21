@@ -1,0 +1,56 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Profile": {
+            "description": "The boundary of the space",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "Roof": {
+            "description": "The roof of the space",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "Area": {
+            "description": "The area of the boundary",
+            "type": "number",
+            "$hyparUnitType": "area"
+        },
+        "BBox": {
+            "description": "The BBox of the Layer",
+            "$ref": "https://schemas.hypar.io/BBox3.json"
+        },
+        "Elevation": {
+            "description": "Elevation of the SpaceElement's lowest underside point.",
+            "type": "number"
+        },
+        "Highpoint": {
+            "description": "Elevation of the SpaceElement's highest topside point.",
+            "type": "number"
+        },
+        "Height": {
+            "description": "The height of this space boundary",
+            "type": "number",
+            "$hyparUnitType": "length"
+        },
+        "Layer": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Layer"
+            },
+            "type": "string",
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "A profile with a program assigned to it, and optional internal cell geometry. ",
+    "$id": "SpaceElementDefinition",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "SpaceElementDefinition"
+}

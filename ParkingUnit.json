@@ -1,0 +1,39 @@
+{
+    "x-namespace": "Elements",
+    "required": [],
+    "properties": {
+        "BaseDefinition": {
+            "$hyparRelationship": {
+                "type": "instance-of",
+                "discriminator": "Elements.GeometricElement"
+            },
+            "description": "The element from which this instance is derived.",
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        },
+        "Transform": {
+            "description": "The transform of the instance.",
+            "$ref": "https://schemas.hypar.io/Transform.json"
+        },
+        "Level": {
+            "type": "string",
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.LevelVolume"
+            },
+            "description": "The level which this instance belongs to",
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "An instance of an element in the model. Instances point to one instance of a type, but have individual ids and transforms.",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/Element.json"
+        }
+    ],
+    "$id": "ElementInstance",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "ElementInstance"
+}
