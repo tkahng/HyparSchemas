@@ -10,6 +10,10 @@
             "description": "The element from which this instance is derived.",
             "$ref": "https://schemas.hypar.io/GeometricElement.json"
         },
+        "Transform": {
+            "description": "The transform of the instance.",
+            "$ref": "https://schemas.hypar.io/Transform.json"
+        },
         "Level": {
             "type": "string",
             "$hyparRelationship": {
@@ -18,10 +22,6 @@
             },
             "description": "The level which this instance belongs to",
             "format": "uuid"
-        },
-        "Transform": {
-            "description": "The transform of the instance.",
-            "$ref": "https://schemas.hypar.io/Transform.json"
         }
     },
     "additionalProperties": false,
