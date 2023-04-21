@@ -24,14 +24,6 @@
             "description": "The BBox of the Layer",
             "$ref": "https://schemas.hypar.io/BBox3.json"
         },
-        "Elevation": {
-            "description": "Elevation of the SpaceElement's lowest underside point.",
-            "type": "number"
-        },
-        "Highpoint": {
-            "description": "Elevation of the SpaceElement's highest topside point.",
-            "type": "number"
-        },
         "Height": {
             "description": "The height of this space boundary",
             "type": "number",
