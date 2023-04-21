@@ -10,11 +10,7 @@
             "description": "The element from which this instance is derived.",
             "$ref": "https://schemas.hypar.io/GeometricElement.json"
         },
-        "Transform": {
-            "description": "The transform of the instance.",
-            "$ref": "https://schemas.hypar.io/Transform.json"
-        },
-        "Level": {
+                "Level": {
             "type": ["string", "null"],
             "$hyparRelationship": {
                 "type": "child-of",
@@ -22,7 +18,12 @@
             },
             "description": "The level which this instance belongs to",
             "format": "uuid"
+        },
+        "Transform": {
+            "description": "The transform of the instance.",
+            "$ref": "https://schemas.hypar.io/Transform.json"
         }
+
     },
     "additionalProperties": false,
     "description": "An instance of an element in the model. Instances point to one instance of a type, but have individual ids and transforms.",
