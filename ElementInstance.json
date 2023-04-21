@@ -15,7 +15,7 @@
             "$ref": "https://schemas.hypar.io/Transform.json"
         },
         "Level": {
-            "type": "string",
+            "type": ["string", "null"],
             "$hyparRelationship": {
                 "type": "child-of",
                 "discriminator": "Elements.Level"
