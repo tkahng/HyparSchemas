@@ -2,19 +2,33 @@
     "x-namespace": "Elements",
     "required": [],
     "properties": {
-        "InstanceCount": {
-            "description": "Number of Instances in the model.",
-            "type": [
-                "integer",
-                "null"
-            ]
+        "BaseDefinitions": {
+            "description": "The element from which this instance is derived.",
+            "type": "array",
+            "items": {
+                "$ref": "https://schemas.hypar.io/GeometricElement.json"
+            }
+        },
+        "Transforms": {
+            "description": "Instance Transforms.",
+            "type": "array",
+            "items": {
+                "$ref": "https://schemas.hypar.io/Transform.json"
+            }
+        },
+        "InstanceReferenceGeometry": {
+            "description": "The element from which this instance is derived.",
+            "type": "array",
+            "items": {
+                "$ref": "https://schemas.hypar.io/GeometricElement.json"
+            }
         }
     },
     "additionalProperties": false,
     "description": "An instance definition info of an element in the model.",
     "allOf": [
         {
-            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+            "$ref": "https://schemas.hypar.io/Element.json"
         }
     ],
     "$id": "InstanceDefinition",
