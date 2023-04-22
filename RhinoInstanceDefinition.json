@@ -15,7 +15,7 @@
             }
         },
         "ReferenceGeometry": {
-            "description": "DefinitionObjects",
+            "description": "RhinoInstanceReferenceGeometry",
             "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/RhinoInstanceReferenceGeometry.json"
