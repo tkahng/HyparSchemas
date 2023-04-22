@@ -1,11 +1,6 @@
-// 20230422161909
-// https://schemas.hypar.io/ElementInstance.json
-
 {
   "x-namespace": "Elements",
-  "required": [
-    
-  ],
+  "required": [],
   "properties": {
     "BaseDefinition": {
       "$hyparRelationship": {
@@ -18,15 +13,6 @@
     "Transform": {
       "description": "The transform of the instance.",
       "$ref": "https://schemas.hypar.io/Transform.json"
-    },
-    "Level": {
-      "type": "string",
-      "$hyparRelationship": {
-        "type": "child-of",
-        "discriminator": "Elements.LevelVolume"
-      },
-      "description": "The level which this instance belongs to",
-      "format": "uuid"
     }
   },
   "additionalProperties": false,

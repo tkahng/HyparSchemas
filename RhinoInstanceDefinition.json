@@ -1,0 +1,37 @@
+{
+    "x-namespace": "Elements",
+    "required": [],
+    "properties": {
+        "InstanceDefinitionId": {
+            "description": "The id of the object in the Rhino document",
+            "type": "string",
+            "format": "guid"
+        },
+        "DefinitionObjects": {
+            "description": "DefinitionObjects",
+            "type": "array",
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/RhinoObjectElement.json"
+            }
+        },
+        "ReferenceGeometry": {
+            "description": "DefinitionObjects",
+            "type": "array",
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/RhinoInstanceReferenceGeometry.json"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "description": "An element of unknown type, imported from Rhino.",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/RhinoImportElement.json"
+        }
+    ],
+    "$id": "RhinoImportElement",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "RhinoObj"
+}
