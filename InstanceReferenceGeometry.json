@@ -10,16 +10,29 @@
             "type": "string",
             "format": "uuid"
         },
-        "DefinitionGeometry": {
+        "BaseDefinition": {
+            "$hyparRelationship": {
+                "type": "instance-of",
+                "discriminator": "Elements.GeometricElement"
+            },
+            "description": "The element from which this instance is derived.",
             "$ref": "https://schemas.hypar.io/GeometricElement.json"
         },
         "Transform": {
-            "description": "Transform.",
+            "description": "The transform of the instance.",
             "$ref": "https://schemas.hypar.io/Transform.json"
         },
-        "Instance": {
-            "description": "Instance.",
-            "$ref": "https://schemas.hypar.io/Element.json"
+        "Level": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Level"
+            },
+            "description": "The level which this instance belongs to",
+            "format": "uuid"
         }
     },
     "additionalProperties": false,
