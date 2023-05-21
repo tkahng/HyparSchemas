@@ -1,0 +1,73 @@
+{
+    "x-namespace": "Elements",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "required": [],
+    "properties": {
+        "Profile": {
+            "description": "The boundary of the space",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "Area": {
+            "description": "The area of the boundary",
+            "type": "number",
+            "$hyparUnitType": "area"
+        },
+        "Height": {
+            "description": "The height of this space boundary",
+            "type": "number",
+            "$hyparUnitType": "length"
+        },
+        "Roof": {
+            "description": "The roof of the space",
+            "$ref": "https://schemas.hypar.io/Profile.json"
+        },
+        "BBox": {
+            "description": "The BBox of the Layer",
+            "$ref": "https://schemas.hypar.io/BBox3.json"
+        },
+        "Layer": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Layer"
+            },
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        },
+        "Level": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Level"
+            },
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        },
+        "InstanceDefinition": {
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.InstanceDefinition"
+            },
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uuid"
+        }
+    },
+    "additionalProperties": false,
+    "description": "A profile with a program assigned to it, and optional internal cell geometry. ",
+    "$id": "ProjectSpaceElement",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "ProjectSpaceElement"
+}

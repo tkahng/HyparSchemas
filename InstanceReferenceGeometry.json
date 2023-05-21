@@ -2,6 +2,18 @@
     "x-namespace": "Elements",
     "required": [],
     "properties": {
+        "Level": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "$hyparRelationship": {
+                "type": "child-of",
+                "discriminator": "Elements.Level"
+            },
+            "description": "The level which this instance belongs to",
+            "format": "uuid"
+        },
         "Definition": {
             "$hyparRelationship": {
                 "type": "child-of",
@@ -9,6 +21,10 @@
             },
             "type": "string",
             "format": "uuid"
+        },
+        "Instance": {
+            "description": "The element from which this instance is derived.",
+            "$ref": "https://schemas.hypar.io/Element.json"
         },
         "BaseDefinition": {
             "$hyparRelationship": {
@@ -21,18 +37,6 @@
         "Transform": {
             "description": "The transform of the instance.",
             "$ref": "https://schemas.hypar.io/Transform.json"
-        },
-        "Level": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "$hyparRelationship": {
-                "type": "child-of",
-                "discriminator": "Elements.Level"
-            },
-            "description": "The level which this instance belongs to",
-            "format": "uuid"
         }
     },
     "additionalProperties": false,

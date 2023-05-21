@@ -20,7 +20,7 @@
             "description": "The element from which this instance is derived.",
             "type": "array",
             "items": {
-                "$ref": "https://schemas.hypar.io/GeometricElement.json"
+                "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/InstanceReferenceGeometry.json"
             }
         }
     },

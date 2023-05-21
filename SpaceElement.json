@@ -2,7 +2,7 @@
     "x-namespace": "Elements",
     "allOf": [
         {
-            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+            "$ref": "https://raw.githubusercontent.com/tkahng/HyparSchemas/main/SpaceElementBase.json"
         }
     ],
     "required": [],
@@ -11,39 +11,15 @@
             "description": "The boundary of the space",
             "$ref": "https://schemas.hypar.io/Profile.json"
         },
-        "Roof": {
-            "description": "The roof of the space",
-            "$ref": "https://schemas.hypar.io/Profile.json"
-        },
         "Area": {
             "description": "The area of the boundary",
             "type": "number",
             "$hyparUnitType": "area"
         },
-        "BBox": {
-            "description": "The BBox of the Layer",
-            "$ref": "https://schemas.hypar.io/BBox3.json"
-        },
         "Height": {
             "description": "The height of this space boundary",
             "type": "number",
             "$hyparUnitType": "length"
-        },
-        "Level": {
-            "$hyparRelationship": {
-                "type": "child-of",
-                "discriminator": "Elements.Level"
-            },
-            "type": "string",
-            "format": "uuid"
-        },
-        "Layer": {
-            "$hyparRelationship": {
-                "type": "child-of",
-                "discriminator": "Elements.Layer"
-            },
-            "type": "string",
-            "format": "uuid"
         }
     },
     "additionalProperties": false,

@@ -10,18 +10,6 @@
         "Color": {
             "description": "Layer Color",
             "$ref": "https://schemas.hypar.io/Color.json"
-        },
-        "ProgramType": {
-            "$hyparRelationship": {
-                "type": "extends",
-                "discriminator": "Elements.ProgramType"
-            },
-            "description": "The Conceptual Mass this volume was created from.",
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "uuid"
         }
     },
     "additionalProperties": false,

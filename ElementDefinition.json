@@ -1,0 +1,25 @@
+{
+    "x-namespace": "Elements",
+    "required": [],
+    "properties": {
+        "Instances": {
+            "description": "The element from which this instance is derived.",
+            "type": "array",
+            "items": {
+                "$ref": "https://schemas.hypar.io/Element.json"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "description": "An instance definition info of an element in the model.",
+    "allOf": [
+        {
+            "$ref": "https://schemas.hypar.io/GeometricElement.json"
+        }
+    ],
+    "$id": "ElementDefinition",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "discriminator": "discriminator",
+    "type": "object",
+    "title": "ElementDefinition"
+}
